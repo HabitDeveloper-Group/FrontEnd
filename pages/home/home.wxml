@@ -1,0 +1,8 @@
+<!--home.wxml-->
+<navigation-bar title="主页" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <text>{{msg}}</text>
+    <button bind:tap="show_msg">点击我</button>
+  </view>
+</scroll-view>
