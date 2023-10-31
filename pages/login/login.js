@@ -84,5 +84,13 @@ Page({
     this.setData({
       saveCount: !this.data.saveCount
     })
+  },
+  registerNewUser(){
+    setTimeout(() => {
+      wx.redirectTo({
+        url: '/pages/register/register',
+      })
+    }, 500);
   }
+  
 })

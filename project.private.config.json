@@ -9,6 +9,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "注册",
+          "pathName": "pages/register/register",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "登陆",
           "pathName": "pages/login/login",
           "query": "",
