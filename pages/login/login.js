@@ -21,25 +21,30 @@ Page({
       username:this.data.username,
       password:this.data.password
     }
-    wx.request({
-      url: 'http://192.168.163.1:8080/user/login',
-      data: postDate,
-      method: 'POST',
-      success(res) {
-        console.log(res)
-        if (res.data.code == 0) {
-          wx.showToast({
-            title: '登陆失败',
-            icon: 'none'
-          })
-        }
-        wx.showToast({
-          title: '登陆成功',
-          icon: 'none'
-        })
-      }
+    // wx.request({
+    //   url: 'http://192.168.163.1:8080/user/login',
+    //   data: postDate,
+    //   method: 'POST',
+    //   success(res) {
+    //     console.log(res)
+    //     if (res.data.code == 0) {
+    //       wx.showToast({
+    //         title: '登陆失败',
+    //         icon: 'none'
+    //       })
+    //     }
+    //     wx.showToast({
+    //       title: '登陆成功',
+    //       icon: 'none'
+    //     })
+        
+    //   }
+      
+    // })
+    wx.showToast({
+      title: '登陆成功',
+      icon: 'none'
     })
-
-    
   }
+  
 })

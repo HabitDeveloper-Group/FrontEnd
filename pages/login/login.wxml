@@ -2,10 +2,19 @@
 <navigation-bar title="登陆" back="{{false}}" color="black" background="#FFF"></navigation-bar>
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
-    <view class="login">
-      <input type="text" model:value="{{username}}" class = "input"  placeholder="请输入用户名" />
-      <input type="password" model:value="{{password}}" class = "input"  placeholder="请输入密码" />
-      <button bindtap="login">登陆</button>
+  <view class="header">
+    <image src="/asset/image/background.jpg" mode="aspectFill"></image>
+  </view>
+    <view class="login" >
+      <view class="form-item">
+        <image src="/asset/image/icon_user.png" mode="aspectFill" ></image>
+        <input type="text" model:value="{{username}}"  placeholder="请输入用户名" />
+      </view>
+      <view class="form-item">
+        <image src="/asset/image/icon_password.png" mode="aspectFill" ></image>
+        <input type="password" model:value="{{password}}"  placeholder="请输入密码" />
+      </view>
+        <button bindtap="login" >登陆</button>
     </view>
   </view>
 </scroll-view>
