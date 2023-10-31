@@ -1,0 +1,11 @@
+<!--home.wxml-->
+<navigation-bar title="登陆" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <view class="login">
+      <input type="text" model:value="{{username}}" class = "input"  placeholder="请输入用户名" />
+      <input type="password" model:value="{{password}}" class = "input"  placeholder="请输入密码" />
+      <button bindtap="login">登陆</button>
+    </view>
+  </view>
+</scroll-view>

@@ -2,7 +2,7 @@
 <navigation-bar title="主页" back="{{false}}" color="black" background="#FFF"></navigation-bar>
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
-    <text>{{msg}}</text>
-    <button bind:tap="show_msg">点击我</button>
+    <input type="text" class = "input" placeholder="请输入用户名" />
+    <input type="password" class = "input" placeholder="请输入密码" />
   </view>
 </scroll-view>
