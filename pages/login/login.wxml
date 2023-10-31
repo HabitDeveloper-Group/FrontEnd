@@ -8,7 +8,7 @@
     <view class="login" >
       <view class="form-item">
         <image src="/asset/image/icon_user.png" mode="aspectFill" ></image>
-        <input type="text" model:value="{{username}}"  placeholder="请输入用户名" />
+        <input type="text" model:value="{{userName}}"  placeholder="请输入用户名" />
       </view>
       <view class="form-item">
         <image src="/asset/image/icon_password.png" mode="aspectFill" ></image>

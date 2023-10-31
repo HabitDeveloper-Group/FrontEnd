@@ -5,10 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    username: '',//注册用户名
+    userName: '',//注册用户名
     name: '',    //昵称
     password: '',//密码
     password_again: '', //确认密码
+    userNameExited: false,
   },
 
   /**
@@ -17,10 +18,12 @@ Page({
   onLoad(options) {
 
   },
+
+  //像后端请求当前用户名是否存在，并使用userNameExisted标记
   check_username() {
     const that = this
     const getDate = {
-      username:that.data.username,
+      userName:that.data.userName,
     }
     // wx.request({
     //   url: '/user/register',
@@ -28,16 +31,20 @@ Page({
     //   method: 'GET',
     //   success(res) {
     //     console.log(res)
+    //     that.data.userNameExited=false
     //     if (res.code == 0) {
     //       wx.showToast({
     //         title: '用户已存在！',
     //         icon: 'erroe'
     //       })
+    //       that.data.userNameExited=true
     //       return
     //     } 
     //   }
     // })
-    if (that.data.username == 'hh') {
+    that.data.userNameExited=false
+    if (that.data.userName == 'hh') {
+      that.data.userNameExited=true
       wx.showToast({
         title: '用户已存在！',
         icon: 'error'
@@ -45,10 +52,14 @@ Page({
       return
     }
   },
+
+  //检查两次密码输入是否一致
   check_password() {
     if (this.data.password === this.data.password_again) return true;
     else return false;
   },
+
+  //点击注册按钮的响应，检查密码是否一致，检查用户名当前是否存在，都满足条件则向后端发送注册请求
   register() {
     if (this.check_password() === false) {
       wx.showToast({
@@ -57,9 +68,16 @@ Page({
       })
       return
     }
+    if (this.data.userNameExited == true) {
+      wx.showToast({
+        title: '用户名已存在！',
+        icon: 'error'
+      })
+      return
+    }
     const that = this
     const postDate = {
-      username:that.data.username,
+      userName:that.data.userName,
       name:that.data.name,
       password:that.data.password
     }

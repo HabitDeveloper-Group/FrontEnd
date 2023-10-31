@@ -8,7 +8,7 @@
     <view class="register" >
       <view class="form-item">
         <image src="/asset/image/icon_user.png" mode="aspectFill" ></image>
-        <input type="text" model:value="{{username}}"  placeholder="请输入用户名" bindblur="check_username"/>
+        <input type="text" model:value="{{userName}}"  placeholder="请输入用户名" bindblur="check_username"/>
       </view>
       <view class="form-item">
         <image src="/asset/image/icon_smile.png" mode="aspectFill" ></image>

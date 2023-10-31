@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    username: '',//登陆用户名
+    userName: '',//登陆用户名
     password: '', //密码
     saveCount: true, //是否记住账号
   },
@@ -31,7 +31,7 @@ Page({
   login() {
     const that = this
     const postDate = {
-      username:that.data.username,
+      userName:that.data.userName,
       password:that.data.password
     }
     // wx.request({
