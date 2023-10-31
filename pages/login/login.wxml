@@ -14,6 +14,10 @@
         <image src="/asset/image/icon_password.png" mode="aspectFill" ></image>
         <input type="password" model:value="{{password}}"  placeholder="请输入密码" />
       </view>
+      <view bindtap="switchStatus" class="checkbox-item">
+        <checkbox checked="{{saveCount}}" class="theme"></checkbox>
+        <view class="margin-left-sm">记住账号密码（仅本地存储）</view>
+      </view>
         <button bindtap="login" >登陆</button>
     </view>
   </view>

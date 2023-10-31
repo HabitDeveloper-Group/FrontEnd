@@ -50,3 +50,7 @@ page {
   height: 32rpx;
   margin-right: 32rpx;
 }
+.checkbox-item {
+  display: flex;
+  align-items: center;
+}
