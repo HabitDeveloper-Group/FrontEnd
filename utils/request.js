@@ -32,8 +32,8 @@ export default function createRequest(options) {
       method: options.method || 'GET',
       timeout: options.timeout || 2000,
       header,
-      success(res) {
-        res = res.data
+      success(res) {        
+        res = res.data        
         switch(res.code) {
           case 1:
             return resolve(res)

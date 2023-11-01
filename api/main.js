@@ -27,3 +27,26 @@ export function registerRequest(data) {
     needLogin: false
   })
 }
+//查询待完成的习惯
+export function processingHabitsRequest(data) {
+  return createRequest ({
+    url: '/home',
+    method: 'GET',
+  })
+}
+
+//查询已完成的习惯
+export function complishedHabitsRequest(data) {
+  return createRequest ({
+    url: '/home/hasFinished',
+    method: 'GET',
+  })
+}
+
+//查询已失败的习惯
+export function failedHabitsRequest(data) {
+  return createRequest ({
+    url: '/home/hasFailed',
+    method: 'GET',
+  })
+}
