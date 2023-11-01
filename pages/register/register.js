@@ -1,4 +1,11 @@
 // pages/register/register.js
+import {
+  registerRequest
+}from '../../api/main'
+import {
+  registerJudgeRequest
+}from '../../api/main'
+
 Page({
 
   /**
@@ -25,32 +32,15 @@ Page({
     const getDate = {
       userName:that.data.userName,
     }
-    // wx.request({
-    //   url: '/user/register',
-    //   data: getDate,
-    //   method: 'GET',
-    //   success(res) {
-    //     console.log(res)
-    //     that.data.userNameExited=false
-    //     if (res.code == 0) {
-    //       wx.showToast({
-    //         title: '用户已存在！',
-    //         icon: 'erroe'
-    //       })
-    //       that.data.userNameExited=true
-    //       return
-    //     } 
-    //   }
-    // })
-    that.data.userNameExited=false
-    if (that.data.userName == 'hh') {
-      that.data.userNameExited=true
+    that.data.userNameExited=true
+    registerJudgeRequest(getDate).then(res => {
+      console.log(res)
       wx.showToast({
-        title: '用户已存在！',
-        icon: 'error'
+        title: res.msg,
+        icon: 'success'
       })
-      return
-    }
+      that.data.userNameExited=false
+    })
   },
 
   //检查两次密码输入是否一致
@@ -63,7 +53,7 @@ Page({
   register() {
     if (this.check_password() === false) {
       wx.showToast({
-        title: '请检查密码是否正确输入！',
+        title: '两次密码输入不匹配！',
         icon: 'none'
       })
       return
@@ -81,33 +71,18 @@ Page({
       name:that.data.name,
       password:that.data.password
     }
-    // wx.request({
-    //   url: '/user/register',
-    //   data: postDate,
-    //   method: 'POST',
-    //   success(res) {
-    //     console.log(res)
-    //     if (res.code == 0) {
-    //       wx.showToast({
-    //         title: '注册失败',
-    //         icon: 'error'
-    //       })
-    //       return
-    //     }
-    //     wx.showToast({
-    //       title: '注册成功',
-    //       icon: 'success'
-    //     })
-    //   }
-    // })
-    wx.showToast({
-      title: '注册成功',
-      icon: 'success'
-    })
-    setTimeout(() => {
-      wx.redirectTo({
-        url: '/pages/login/login',
+
+    registerRequest(postDate).then(res => {
+      console.log(res)
+      wx.showToast({
+        title: '注册成功',
+        icon: 'success'
       })
-    }, 500);
+      setTimeout(() => {
+        wx.redirectTo({
+          url: '/pages/login/login',
+        })
+      }, 500);
+    })
   }
 })
