@@ -2,11 +2,47 @@
   "pages": [
     "pages/home/home",
     "pages/login/login",
-    "pages/register/register"
+    "pages/register/register",
+    "pages/manage/manage",
+    "pages/analysis/analysis",
+    "pages/mine/mine"
   ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#9e9e9e",
+    "selectedColor": "#444444",
+    "backgroundColor": "#ffffff",
+    "borderStyle":"black",
+    "list": [
+      {
+        "text": "首页",
+        "iconPath": "/asset/tabbar_icon/home.png",
+        "selectedIconPath": "/asset/tabbar_icon/home_active.png",
+        "pagePath": "pages/home/home"
+      },
+      {
+        "text": "管理",
+        "iconPath": "/asset/tabbar_icon/manage.png",
+        "selectedIconPath": "/asset/tabbar_icon/manage_active.png",
+        "pagePath": "pages/manage/manage"
+      },
+      {
+        "text": "分析",
+        "iconPath": "/asset/tabbar_icon/analysis.png",
+        "selectedIconPath": "/asset/tabbar_icon/analysis_active.png",
+        "pagePath": "pages/analysis/analysis"
+      },
+      {
+        "text": "我的",
+        "iconPath": "/asset/tabbar_icon/mine.png",
+        "selectedIconPath": "/asset/tabbar_icon/mine_active.png",
+        "pagePath": "pages/mine/mine"
+      }
+    
+    ]
   },
   "renderer": "skyline",
   "rendererOptions": {

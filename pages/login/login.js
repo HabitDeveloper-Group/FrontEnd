@@ -43,13 +43,6 @@ Page({
     })
     loginRequest(postDate).then(res => {
       console.log(res)
-      if (res.code == 0) {
-        wx.showToast({
-          title: res.msg,
-          icon: 'none'
-        })
-        return
-      }
       wx.setStorageSync('token', res.data)
       if (that.data.saveCount) {
         wx.setStorageSync('account', postDate)
@@ -58,13 +51,14 @@ Page({
       }
       wx.showToast({
         title: '登陆成功',
-        icon: 'none'
+        icon: 'success'
       })
+      console.log("here")
       setTimeout(() => {
-        wx.redirectTo({
+        wx.switchTab({
           url: '/pages/home/home',
         })
-      }, 1500);
+      }, 500);
     })
   },
   switchStatus() {

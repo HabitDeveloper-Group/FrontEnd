@@ -1,0 +1,6 @@
+<!--pages/manage/manage.wxml-->
+<navigation-bar title="管理" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+  </view>
+</scroll-view>

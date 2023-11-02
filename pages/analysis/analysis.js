@@ -1,4 +1,4 @@
-// pages/habits/habit.js.js
+// pages/analysis/analysis.js
 Page({
 
   /**
