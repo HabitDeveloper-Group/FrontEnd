@@ -2,7 +2,9 @@
 import {
   processingHabitsRequest,
   complishedHabitsRequest,
-  failedHabitsRequest
+  failedHabitsRequest,
+  checkInHabitsRequest,
+
 }from '../../api/main'
 
 
@@ -11,7 +13,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    type: 3,
+    type: 1,
     list: []
   },
 
@@ -40,4 +42,27 @@ Page({
     })
   },
 
+  //改变成绩类型
+  changeHabitsType(e) {
+    const type = e.currentTarget.dataset.type
+    this.setData({
+      type
+    })
+    this.getList()
+  },
+
+  clockInHabits(e) {
+    const that = this
+    //!命名不能用驼峰，需要全小写
+    const habitId = e.currentTarget.dataset.habitid
+    if (that.data.type == 1) {
+      checkInHabitsRequest(habitId).then(res => {
+        wx.showToast({
+          title: '已成功打卡！',
+          icon: 'success'
+        })
+        that.getList()
+      })
+    }
+  }
 })

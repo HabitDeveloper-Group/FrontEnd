@@ -2,6 +2,23 @@
 <navigation-bar title="主页" back="{{false}}" color="black" background="#FFF"></navigation-bar>
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
-    
+    <view class="header">
+      <view class="habits-types">
+        <view bindtap="changeHabitsType" data-type="1" class="habits-type {{type == 1 ? 'active' : ''}}">进行中</view>
+        <view bindtap="changeHabitsType" data-type="2" class="habits-type {{type == 2 ? 'active' : ''}}">已完成</view>
+        <view bindtap="changeHabitsType" data-type="3" class="habits-type {{type == 3 ? 'active' : ''}}">已失败</view>
+      </view>
+    </view>
+    <view class="habits-list" >
+      <view class="list" wx:for="{{list.rows}}" wx:key="habitId">
+        <view bindtap="clockInHabits" data-habitid="{{item.habitId}}" class="habit-item" >                    
+          <view class="habit-name">
+            <image src="{{item.icon}}" mode="aspectFill" ></image>
+            <view>{{item.habitName}}</view>
+          </view>
+          <view class="habit-days">{{item.hasDoneTimes}}/{{item.lowerLimit}}</view>
+        </view>
+      </view>
+    </view>
   </view>
 </scroll-view>
