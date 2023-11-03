@@ -1,6 +1,33 @@
 <!--pages/manage/manage.wxml-->
+<!--home.wxml-->
 <navigation-bar title="管理" back="{{false}}" color="black" background="#FFF"></navigation-bar>
-<scroll-view class="scrollarea" scroll-y type="list">
+<scroll-view class="scrollarea" scroll-y type="list" > 
   <view class="container">
+    <view class="habits-list" >
+      <view class="list" wx:for="{{list.rows}}" wx:key="habitId">
+        <view bindtap="clickInHabits" data-habitid="{{item.habitId}}" class="habit-item" >   
+          <view class="attribute">                
+            <view class="habit-name">
+              <image src="{{item.icon}}" mode="aspectFill" ></image>
+              <view>{{item.habitName}}</view>
+            </view>
+            <view class="habit-days">{{item.hasDoneTimes}}/{{item.lowerLimit}}
+            </view>
+          </view> 
+          <view class="operator" wx:if="{{id == item.habitId}}">
+            <view class="habit-modify">
+              <button>修改</button>
+            </view>
+            <view class="habit-delete">
+              <button>删除</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="addHabits">
+      <image src="/asset/image/Add.png"></image>
+      <view>增加习惯</view>
+    </view>
   </view>
 </scroll-view>

@@ -74,3 +74,12 @@ export function checkInHabitsRequest(data) {
     method: 'POST',
   })
 }
+
+//查询所有的习惯
+export function allHabitsRequest(data) {
+  return createRequest ({
+    url: '/habits',
+    method: 'GET',
+    loading: false,
+  })
+}
