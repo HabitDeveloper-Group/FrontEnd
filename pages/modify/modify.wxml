@@ -1,0 +1,11 @@
+<!--pages/modify/modify.wxml-->
+<navigation-bar title="修改数据" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <scroll-view scroll-x class='swiper-nav' scroll-left='{{swiperNav.x}}' scroll-with-animation='true' bindtap='swiperNav'>
+　    <image src="{{item.icon}}" wx:for='{{swiperNav.arr}}' wx:key='{{index}}' class='item-nav {{swiperNav.i==index ? "active" : ""}}'     data-i='{{index}}'>
+　    </image>
+    </scroll-view>
+  </view>
+</scroll-view>

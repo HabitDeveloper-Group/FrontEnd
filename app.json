@@ -6,7 +6,8 @@
     "pages/manage/manage",
     "pages/analysis/analysis",
     "pages/mine/mine",
-    "pages/welcome/welcome"
+    "pages/welcome/welcome",
+    "pages/modify/modify"
   ],
   "window": {
     "navigationBarTextStyle": "black",

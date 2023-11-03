@@ -83,3 +83,12 @@ export function allHabitsRequest(data) {
     loading: false,
   })
 }
+
+//获取所有图标
+export function allIconsRequest(data) {
+  return createRequest ({
+    url: '/icons',
+    method: 'GET',
+    loading: false,
+  })
+}
