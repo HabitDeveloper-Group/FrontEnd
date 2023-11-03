@@ -11,12 +11,12 @@
     </view>
     <view class="habits-list" >
       <view class="list" wx:for="{{list.rows}}" wx:key="habitId">
-        <view bindtap="clockInHabits" data-habitid="{{item.habitId}}" class="habit-item" >                    
+        <view bindtap="clockInHabits" data-habitid="{{item.habit.habitId}}" class="habit-item" >                    
           <view class="habit-name">
-            <image src="{{item.icon}}" mode="aspectFill" ></image>
-            <view>{{item.habitName}}</view>
+            <image src="{{item.habit.icon}}" mode="aspectFill" ></image>
+            <view>{{item.habit.habitName}}</view>
           </view>
-          <view class="habit-days">{{item.hasDoneTimes}}/{{item.lowerLimit}}</view>
+          <view class="habit-days">{{item.habit.hasDoneTimes}}/{{item.habit.lowerLimit}}</view>
         </view>
       </view>
     </view>

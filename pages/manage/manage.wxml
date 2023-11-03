@@ -4,17 +4,21 @@
 <scroll-view class="scrollarea" scroll-y type="list" > 
   <view class="container">
     <view class="habits-list" >
-      <view class="list" wx:for="{{list.rows}}" wx:key="habitId">
-        <view bindtap="clickInHabits" data-habitid="{{item.habitId}}" class="habit-item" >   
+        <view bindtap="clickInHabits" data-habitid="{{item.habit.habitId}}" class="habit-item" wx:for="{{list.rows}}" wx:key="habitId">   
           <view class="attribute">                
             <view class="habit-name">
-              <image src="{{item.icon}}" mode="aspectFill" ></image>
-              <view>{{item.habitName}}</view>
+              <image src="{{item.habit.icon}}" mode="aspectFill" ></image>
+              <view>{{item.habit.habitName}}</view>
             </view>
-            <view class="habit-days">{{item.hasDoneTimes}}/{{item.lowerLimit}}
+            <view class="habit-description" wx:if="{{item.habit.habitId != id && item.habit.description !== '暂未添加描述'}}">{{item.habit.description}}
+            </view>
+            <view class="cssofFinishDays" wx:if="{{item.habit.habitId != id}}">              
+              <view class="habit-finishedDays"> {{item.finishedDays}} 天
+              </view>
+              <view class="first">共计坚持</view>
             </view>
           </view> 
-          <view class="operator" wx:if="{{id == item.habitId}}">
+          <view class="operator" wx:if="{{id == item.habit.habitId}}">
             <view class="habit-modify">
               <button>修改</button>
             </view>
@@ -23,11 +27,11 @@
             </view>
           </view>
         </view>
-      </view>
+      
     </view>
     <view class="addHabits">
       <image src="/asset/image/Add.png"></image>
-      <view>增加习惯</view>
+      <view>添加习惯</view>
     </view>
   </view>
 </scroll-view>
