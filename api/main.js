@@ -10,6 +10,15 @@ export function loginRequest(data) {
   })
 }
 
+//登出
+export function logoutRequest(data) {
+  return createRequest ({
+    url: '/user/logout',
+    method: 'GET',
+    loading: false
+  })
+}
+
 //判断用户名是否存在
 export function registerJudgeRequest(data) {
   return createRequest ({

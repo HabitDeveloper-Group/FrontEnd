@@ -2,5 +2,8 @@
 <navigation-bar title="我的" back="{{false}}" color="black" background="#FFF"></navigation-bar>
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
+    <view class="exit">
+      <button bindtap="exitLogin">退出登录</button>
+    </view>
   </view>
 </scroll-view>

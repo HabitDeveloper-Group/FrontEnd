@@ -1,0 +1,4 @@
+<!--pages/welcome/welcome.wxml-->
+<view class="cover-box">
+  <image src="/asset/image/startimage.jpg" mode="aspectFill"></image>
+</view>

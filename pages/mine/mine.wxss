@@ -1,1 +1,15 @@
 /* pages/mine/mine.wxss */
+.exit button {
+  width: 100%;
+  border-radius: 60rpx;
+  background: linear-gradient(
+    90deg,
+    rgba(193, 239, 245, 0.9) 0%,     
+    rgb(242, 150, 223) 2%,
+    rgba(232, 10, 240, 1) 100%
+  );
+  box-shadow: 0rpx 0rpx 12rpx 0rpx rgba(0, 0, 0, 0.1);
+  color: #fff;
+  height: 96rpx;
+  margin-top: 96rpx;
+}

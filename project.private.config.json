@@ -9,6 +9,20 @@
     "miniprogram": {
       "list": [
         {
+          "name": "欢迎页",
+          "pathName": "pages/welcome/welcome",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "主页",
           "pathName": "pages/home/home",
           "query": "",

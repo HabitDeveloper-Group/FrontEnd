@@ -5,7 +5,8 @@
     "pages/register/register",
     "pages/manage/manage",
     "pages/analysis/analysis",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/welcome/welcome"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -15,7 +16,7 @@
     "color": "#9e9e9e",
     "selectedColor": "#444444",
     "backgroundColor": "#ffffff",
-    "borderStyle":"black",
+    "borderStyle": "black",
     "list": [
       {
         "text": "首页",
@@ -41,7 +42,6 @@
         "selectedIconPath": "/asset/tabbar_icon/mine_active.png",
         "pagePath": "pages/mine/mine"
       }
-    
     ]
   },
   "renderer": "skyline",
