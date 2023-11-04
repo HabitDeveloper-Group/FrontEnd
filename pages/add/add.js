@@ -56,9 +56,9 @@ Page({
 
     description:"",
 
-    earliestTime:"",
+    earliestTime:"00:00",
 
-    lastestTime:"",
+    lastestTime:"23:59",
 
     lowerLimit:""
     
@@ -69,8 +69,6 @@ Page({
    */
   onLoad(options) {
     this.init();
-    
-
   },
 
   init() {
@@ -144,7 +142,7 @@ Page({
       icon:that.data.currentIconUrl,
       tag:that.data.currentTag,
       description:that.data.description,
-      earlistTime:that.data.earliestTime,
+      earliestTime:that.data.earliestTime,
       latestTime:that.data.lastestTime,
       lowerLimit:that.data.lowerLimit
     }

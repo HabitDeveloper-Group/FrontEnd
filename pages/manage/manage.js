@@ -22,6 +22,10 @@ Page({
     this.getList()
   },
 
+  onShow() {
+    this.getList()
+  },
+
   getList() {
     const that = this
     allHabitsRequest().then(res => {
@@ -66,9 +70,7 @@ Page({
     const habitId = e.currentTarget.dataset.habitid
     console.log(habitId + "删除")
     deleteHabitsRequest(habitId).then(res => {
-      wx.switchTab({
-        url: '/pages/manage/manage',
-      })
+      that.getList()      
     })
   }
 })
