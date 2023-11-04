@@ -29,11 +29,11 @@ Page({
   //像后端请求当前用户名是否存在，并使用userNameExisted标记
   check_username() {
     const that = this
-    const getDate = {
-      userName:that.data.userName,
+    const getData = {
+      username:that.data.userName,
     }
     that.data.userNameExited=true
-    registerJudgeRequest(getDate).then(res => {
+    registerJudgeRequest(getData).then(res => {
       console.log(res)
       wx.showToast({
         title: res.msg,

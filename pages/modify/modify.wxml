@@ -3,9 +3,72 @@
 
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
-    <scroll-view scroll-x class='swiper-nav' scroll-left='{{swiperNav.x}}' scroll-with-animation='true' bindtap='swiperNav'>
-　    <image src="{{item.icon}}" wx:for='{{swiperNav.arr}}' wx:key='{{index}}' class='item-nav {{swiperNav.i==index ? "active" : ""}}'     data-i='{{index}}'>
-　    </image>
+    <view class="header">
+      <view class="radius">
+        <image src="{{currentIconUrl}}"></image>
+      </view>
+      <input type="text" model:value="{{habitName}}" class="inputname" placeholder="填入习惯的名称" />
+    </view>
+    <view class="iconTip">
+      <view class="iconTip1">挑选你的图标:</view>
+      <view class="iconTip2">向左滑动选择更多图标</view>
+    </view>
+    <scroll-view scroll-x class='swiper-nav'  scroll-with-animation='true' bindtap='swiperIcon'>
+      <view class="Icon">
+  　    <image src="{{item.content}}" wx:for='{{swiperIcon.arr}}' wx:key='{{index}}' class='iconitem {{swiperIcon.i==index ? "active" : ""}}'  data-i='{{index}}'>
+  　    </image>
+      </view>
     </scroll-view>
+
+
+    <view class="tagTip">
+      <view class="tagTip1">习惯分类:</view>
+      <view class="tagTip2">{{currentTag}}</view>
+    </view>
+    <scroll-view scroll-x class='swiper-nav' scroll-left='{{swiperTag.x}}' scroll-with-animation='true' bindtap='swiperTag'>
+      <view class="Tag">
+  　    <view wx:for='{{swiperTag.arr}}' wx:key='{{index}}' class='tagitem {{swiperTag.i==index ? "active" : ""}}'  data-i='{{index}}'>
+          {{item.content}}
+  　    </view>
+      </view>
+    </scroll-view>
+    
+    <picker mode="time" model:value="{{earliestTime}}" >
+      <view class="timeStart">
+        <view class="timeStartTip1">习惯开始时间</view>
+        <view class="timeStartShow">
+          <view class="timeStartTip2">{{earliestTime}}</view>
+          <image src="/asset/image/arrow_right.png"></image>
+        </view>        
+      </view>      
+    </picker>
+
+    <picker mode="time" model:value="{{lastestTime}}" >
+      <view class="timeEnd">
+        <view class="timeEndTip1">习惯结束时间</view>
+        <view class="timeEndShow">
+          <view class="timeEndTip2">{{lastestTime}}</view>
+          <image src="/asset/image/arrow_right.png"></image>
+        </view>        
+      </view>      
+    </picker>
+    
+
+    <picker mode="selector" model:value="{{lowerLimit}}" range="{{countArray}}">
+      <view class="timeEnd">
+        <view class="timeEndTip1">最小打卡次数</view>
+        <view class="timeEndShow">
+          <view class="timeEndTip2">{{lowerLimit}} 次</view>
+          <image src="/asset/image/arrow_right.png"></image>
+        </view>        
+      </view>      
+    </picker>
+    
+    <view class="descriptionTip">
+      <view class="descriptionTip1">添加你喜欢的描述吧！</view>
+      <input type="text" model:value="{{description}}" class="descriptionTexts" placeholder="每日一苹果，医生远离我" />
+    </view>
+
+    <button bindtap="modify" >保存</button>
   </view>
 </scroll-view>

@@ -1,19 +1,79 @@
 /* pages/modify/modify.wxss */
 page {
-
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    0deg,
+    rgba(161,140,209,0.2) 0%,
+    rgba(251,194,235,0.2) 100%
+  );
 }
+
+.container {
+  padding:20rpx
+}
+.header {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.radius {
+  background: rgb(188, 214, 196);
+  border-radius: 50% 50%;
+  width: 115rpx;
+  height: 115rpx;
+
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.inputname {
+  margin-top: 20rpx;
+  margin-bottom: 50rpx;
+  background: rgba(247, 151, 219, 0.3);
+  border-radius: 20rpx;
+}
+
+.header image {  
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.iconTip {
+  display: flex;
+  flex-direction: row;
+}
+.iconTip1 {
+  margin-bottom: 20rpx;
+  font-weight: bold;
+  margin-left: 10rpx;
+  font-size: 28rpx;
+}
+
+.iconTip2 {
+  margin-bottom: 20rpx;
+  margin-left: 30rpx;
+  font-size: 25rpx;
+}
+
 /*横向导航*/
 
 .swiper-nav{
-  
-
   background-color: #fff;
   white-space: nowrap;
   -webkit-tap-highlight-color:rgba(0,0,0,0);
+  padding-bottom: 10rpx;
 }
 
 
-.swiper-nav .item-nav{
+.Icon .iconitem{
   display: inline-block;
   padding: 30rpx 32rpx;
   width: 120rpx;
@@ -21,11 +81,54 @@ page {
   cursor: pointer;
 }
 
-.swiper-nav .active{
+.Tag {  
+  padding-top: 10rpx;
+}
+
+.tagTip {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50rpx;
+}
+
+.tagTip1 {
+  margin-bottom: 20rpx;
+  font-weight: bold;
+  margin-left: 10rpx;
+  font-size: 28rpx;
+}
+
+.tagTip2 {
+  margin-bottom: 20rpx;
+  margin-left: 30rpx;
+  font-size: 25rpx;
+}
+
+
+.Tag .tagitem{
+  display: inline-flex;
+  width: 120rpx;
+  height: 70rpx;
+  cursor: pointer;
+
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+  
+  border-radius: 30rpx;
+  background: rgba(230, 230, 230, 0.8);
+  box-shadow: 0px 0px 10px -20px rgba(0, 0, 0, 0.05);
+  font-size: 27rpx;
+  color: #3b3b3b;
+
+  margin-left: 10rpx;
+}
+
+.Icon .active{
   color: #f43838
 }
 
-.swiper-nav .active::after{
+.Icon .active::after{
   content:'';
   position: absolute;
   left: 32rpx;
@@ -35,4 +138,112 @@ page {
   border-radius: 4rpx;bottom: 18rpx
 }
 
+.Tag .active{
+  color: #fff;
+  background: #1d0909
+}
 
+
+.descriptionTip {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50rpx;
+}
+
+.descriptionTip1 {
+  margin-bottom: 20rpx;
+  font-weight: bold;
+  margin-left: 10rpx;
+  font-size: 28rpx;
+}
+
+.descriptionTexts {
+  background: rgba(230, 230, 230, 0.8);
+  height: 150rpx;
+  width: 100%;
+
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30rpx;
+
+}
+
+.timeStart {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50rpx;
+  text-align:center;
+  align-items: center;
+  
+}
+.timeStartTip1 {
+  margin-bottom: 20rpx;
+  font-weight: bold;
+  margin-left: 10rpx;
+  font-size: 28rpx;
+  
+}
+.timeStartShow {
+  margin-bottom: 20rpx;
+  font-weight: bold;
+  margin-left: 10rpx;
+  font-size: 28rpx;
+  display: flex;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+}
+.timeStartShow image{
+  height: 60rpx;
+  width: 60rpx;
+}
+
+
+
+.timeEnd {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  text-align:center;
+  align-items: center;
+  
+}
+
+.timeEndTip1 {
+  margin-bottom: 20rpx;
+  font-weight: bold;
+  margin-left: 10rpx;
+  font-size: 28rpx;
+  
+}
+.timeEndShow {
+  margin-bottom: 20rpx;
+  font-weight: bold;
+  margin-left: 10rpx;
+  font-size: 28rpx;
+  display: flex;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeEndShow image{
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.container button {
+  width: 100%;
+  border-radius: 60rpx;
+  background: linear-gradient(
+    90deg,
+    rgba(193, 239, 245, 0.9) 0%,
+    rgba(10, 232, 240, 1) 2%,
+    rgba(136, 242, 223, 1) 100%
+  );
+  box-shadow: 0rpx 0rpx 12rpx 0rpx rgba(0, 0, 0, 0.1);
+  color: #fff;
+  height: 96rpx;
+  margin-top: 36rpx;
+}

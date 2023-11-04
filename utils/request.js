@@ -15,10 +15,14 @@ export default function createRequest(options) {
     }
 
     const baseUrl = "https://d4e1eed8-1e2b-45c8-b358-249df221e2ce.mock.pstmn.io" 
+    //https://z55024643k.goho.co
+    //https://d4e1eed8-1e2b-45c8-b358-249df221e2ce.mock.pstmn.io
     const url = `${baseUrl}${options.url}`
     const header = {
       token
     }
+    const data = options.data
+
     let showLoading = false
     if (options.loading !== false) {
       showLoading = true
@@ -32,6 +36,7 @@ export default function createRequest(options) {
       method: options.method || 'GET',
       timeout: options.timeout || 2000,
       header,
+      data:options.data || {},
       success(res) {        
         res = res.data        
         switch(res.code) {
