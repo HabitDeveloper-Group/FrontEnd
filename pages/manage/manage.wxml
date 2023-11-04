@@ -20,16 +20,16 @@
           </view> 
           <view class="operator" wx:if="{{id == item.habit.habitId}}">
             <view class="habit-modify">
-              <button>修改</button>
+              <button bindtap="modifyHabits" data-habitid="{{item.habit.habitId}}">修改</button>
             </view>
             <view class="habit-delete">
-              <button>删除</button>
+              <button bindtap="deleteHabits" data-habitid="{{item.habit.habitId}}">删除</button>
             </view>
           </view>
         </view>
       
     </view>
-    <view class="addHabits">
+    <view class="addHabits" bindtap="addHabits">
       <image src="/asset/image/Add.png"></image>
       <view>添加习惯</view>
     </view>

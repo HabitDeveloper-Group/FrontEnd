@@ -2,6 +2,7 @@
 
 import {
   allHabitsRequest,
+  deleteHabitsRequest,
 }from '../../api/main'
 
 Page({
@@ -45,4 +46,29 @@ Page({
     }
   },
 
+
+  addHabits() {
+    wx.navigateTo({
+      url: '/pages/add/add',
+    })
+  },
+
+  modifyHabits(e) {
+    const habitId = e.currentTarget.dataset.habitid
+    console.log(habitId + "修改")
+    wx.navigateTo({
+      url: '/pages/modify/modify?id=' + habitId,
+    })
+   
+  },
+
+  deleteHabits(e) {
+    const habitId = e.currentTarget.dataset.habitid
+    console.log(habitId + "删除")
+    deleteHabitsRequest(habitId).then(res => {
+      wx.switchTab({
+        url: '/pages/manage/manage',
+      })
+    })
+  }
 })

@@ -70,7 +70,7 @@ export function failedHabitsRequest(data) {
 //打卡
 export function checkInHabitsRequest(data) {
   return createRequest ({
-    url: '/home/'+data,
+    url: '/home/'+ data,
     method: 'POST',
   })
 }
@@ -89,6 +89,44 @@ export function allIconsRequest(data) {
   return createRequest ({
     url: '/icons',
     method: 'GET',
+    loading: false,
+  })
+}
+
+//添加习惯
+export function addHabitsRequest(data) {
+  return createRequest ({
+    url: '/habits',
+    method: 'POST',
+    data,
+    loading: false,
+  })
+}
+
+//查询某一个特定习惯
+export function getInitHabitsRequest(data) {
+  return createRequest ({
+    url: '/habits/' + data,
+    method: 'GET',
+    loading: false,
+  })
+}
+
+//修改某一个特定习惯
+export function modifyHabitsRequest(data) {
+  return createRequest ({
+    url: '/habits/',
+    method: 'PUT',
+    data,
+    loading: false,
+  })
+}
+
+//删除某一个特定习惯
+export function deleteHabitsRequest(data) {
+  return createRequest ({
+    url: '/habits/' + data,
+    method: 'DELETE',
     loading: false,
   })
 }

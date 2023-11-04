@@ -1,9 +1,9 @@
+// pages/add/add.js
 // pages/modify/modify.js
 
 import {
   allIconsRequest,
-  getInitHabitsRequest,
-  modifyHabitsRequest
+  addHabitsRequest
 }from '../../api/main.js'
 
 Page({
@@ -11,7 +11,6 @@ Page({
   /**
    * 页面的初始数据
    */
-
   data: {
     swiperIcon: {
       i:0,
@@ -59,40 +58,26 @@ Page({
 
     earliestTime:"",
 
-    latestTime:"",
+    lastestTime:"",
 
-    lowerLimit:"",
+    lowerLimit:""
     
-    habitId:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.setData({
-      habitId: options.id
-    });
     this.init();
+    
 
   },
 
   init() {
-    this.onLoadIcons()
-    const that = this
-    getInitHabitsRequest(that.data.habitId).then(res => {
-      this.setData({       
-        habitName:res.data.habitName,
-        currentTag:res.data.tag,
-        currentIconUrl:res.data.icon,
-        description:res.data.description,
-        latestTime:res.data.latestTime,
-        earliestTime:res.data.earliestTime,        
-        lowerLimit:res.data.lowerLimit,        
-      })
+    this.onLoadIcons();
+    this.setData({
+      currentTag: this.data.swiperTag.arr[0].content
     })
-    
-
   },
   
   swiperIcon:function(e){　
@@ -143,27 +128,38 @@ Page({
     　})
   },
 
-  modifyHabits() {
+  addHabits() {
     const that = this
-    const putDatas = {
-          habitId:that.data.habitId,
-          habitName:that.data.habitName,
-          icon:that.data.currentIconUrl,
-          tag:that.data.currentTag,
-          description:that.data.description,
-          earlistTime:that.data.earliestTime,
-          latestTime:that.data.latestTime,
-          lowerLimit:that.data.lowerLimit
+
+    if (that.data.habitName == "" || that.data.tag == "") {
+      wx.showToast({
+        title: '习惯名称和标签是必填项',
+        icon: 'none'
+      })
+      return
+    }
+   
+    const postData = {
+      habitName: that.data.habitName,
+      icon:that.data.currentIconUrl,
+      tag:that.data.currentTag,
+      description:that.data.description,
+      earlistTime:that.data.earliestTime,
+      latestTime:that.data.lastestTime,
+      lowerLimit:that.data.lowerLimit
     }
 
-    modifyHabitsRequest(putDatas).then(res => {
+    addHabitsRequest(postData).then(res=> {
+      console.log(res)
       setTimeout(() => {
         wx.switchTab({
           url: '/pages/manage/manage',
         })  
       }, 1000);     
     })
-  }
 
+  },
 
+  
+  
 })

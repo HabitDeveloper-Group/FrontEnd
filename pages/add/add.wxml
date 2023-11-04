@@ -1,6 +1,5 @@
-<!--pages/modify/modify.wxml-->
-<navigation-bar title="修改数据" color="black" background="#FFF"></navigation-bar>
-
+<!--pages/add/add.wxml-->
+<navigation-bar title="添加习惯" color="black" background="#FFF"></navigation-bar>
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
     <view class="header">
@@ -43,11 +42,11 @@
       </view>      
     </picker>
 
-    <picker mode="time" model:value="{{latestTime}}" >
+    <picker mode="time" model:value="{{lastestTime}}" >
       <view class="timeEnd">
         <view class="timeEndTip1">习惯结束时间</view>
         <view class="timeEndShow">
-          <view class="timeEndTip2">{{latestTime}}</view>
+          <view class="timeEndTip2">{{lastestTime}}</view>
           <image src="/asset/image/arrow_right.png"></image>
         </view>        
       </view>      
@@ -69,6 +68,6 @@
       <input type="text" model:value="{{description}}" class="descriptionTexts" placeholder="每日一苹果，医生远离我" />
     </view>
 
-    <button bindtap="modifyHabits" >保存</button>
+    <button bindtap="addHabits" >保存</button>
   </view>
 </scroll-view>

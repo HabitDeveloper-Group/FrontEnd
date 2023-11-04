@@ -9,6 +9,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "添加",
+          "pathName": "pages/add/add",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "修改",
           "pathName": "pages/modify/modify",
           "query": "",
