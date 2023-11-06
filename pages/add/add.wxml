@@ -12,7 +12,7 @@
       <view class="iconTip1">挑选你的图标:</view>
       <view class="iconTip2">向左滑动选择更多图标</view>
     </view>
-    <scroll-view scroll-x class='swiper-nav'  scroll-with-animation='true' bindtap='swiperIcon'>
+    <scroll-view scroll-x class='swiper-nav' scroll-left='{{swiperIcon.x}}' scroll-with-animation='true' bindtap='swiperIcon'>
       <view class="Icon">
   　    <image src="{{item.content}}" wx:for='{{swiperIcon.arr}}' wx:key='{{index}}' class='iconitem {{swiperIcon.i==index ? "active" : ""}}'  data-i='{{index}}'>
   　    </image>
@@ -53,11 +53,11 @@
     </picker>
     
 
-    <picker mode="selector" model:value="{{lowerLimit}}" range="{{countArray}}">
+    <picker mode="selector" model:value="{{lowerLimitIdex}}" range="{{countArray}}" bindchange="limitpick">
       <view class="timeEnd">
         <view class="timeEndTip1">最小打卡次数</view>
         <view class="timeEndShow">
-          <view class="timeEndTip2">{{countArray[lowerLimit]}} 次</view>
+          <view class="timeEndTip2">{{lowerLimit}} 次</view>
           <image src="/asset/image/arrow_right.png"></image>
         </view>        
       </view>      

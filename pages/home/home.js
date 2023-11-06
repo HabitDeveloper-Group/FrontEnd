@@ -23,6 +23,10 @@ Page({
     this.getList()
   },
 
+  onShow() {
+    this.getList()
+  },
+
   getList() {
     const that = this
     let p = null

@@ -14,7 +14,7 @@ Page({
   data: {
     swiperIcon: {
       i:0,
-      x:0,
+      x:100,
       arr:[        
       ]
     },
@@ -43,7 +43,6 @@ Page({
         {
           v:6, content:"娱乐"
         },
-        
       ]
     },
     countArray:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
@@ -60,7 +59,10 @@ Page({
 
     lastestTime:"23:59",
 
-    lowerLimit:""
+    lowerLimit:"1",
+
+    lowerLimitIdex:"0",
+
     
   },
 
@@ -83,7 +85,7 @@ Page({
     　var w=wx.getSystemInfoSync().windowWidth;
     　var leng=this.data.swiperIcon.arr.length;
     　var i = e.target.dataset.i;
-    　var disX = (i - 2) * w / leng;
+    　var disX = (i - 2.5) * w / 6.0 ;
       //console.log(this.data.arr['i'])
     　if(i!=this.data.swiperIcon.i){
     　　this.setData({
@@ -113,7 +115,7 @@ Page({
     　var w=wx.getSystemInfoSync().windowWidth;
     　var leng=this.data.swiperTag.arr.length;
     　var i = e.target.dataset.i;
-    　var disX = (i - 2) * w / leng;
+    　var disX = (i - 2) * w / 6;
       //console.log(this.data.arr['i'])
     　if(i!=this.data.swiperTag.i){
     　　this.setData({
@@ -157,6 +159,12 @@ Page({
     })
 
   },
+
+  limitpick:function(e) {
+    this.setData({
+      lowerLimit:this.data.countArray[this.data.lowerLimitIdex]
+    })
+  }
 
   
   

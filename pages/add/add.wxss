@@ -106,7 +106,7 @@ page {
 }
 
 
-.Tag .tagitem{
+.tagitem{
   display: inline-flex;
   width: 120rpx;
   height: 70rpx;
