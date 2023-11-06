@@ -1,1 +1,71 @@
 /* pages/analysis/analysis.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    0deg,
+    rgba(161,140,209,0.2) 0%,
+    rgba(251,194,235,0.2) 100%
+  );
+}
+@font-face {
+  font-family: "阿里妈妈东方大楷 Regular";font-weight: 400;src: url("//at.alicdn.com/wf/webfont/mQyLWzRkRUjs/DolsuqsTiuvi.woff2") format("woff2"),
+  url("//at.alicdn.com/wf/webfont/mQyLWzRkRUjs/WTzYmyAsBHGa.woff") format("woff");
+  font-display: swap;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: "阿里妈妈东方大楷 Regular";
+  font-size: 80rpx;
+  margin-top: 50rpx;
+}
+
+.showWeek {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  
+  font-size: 30rpx;
+}
+
+.showWeek image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.week {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+}
+.week image {
+  width: 400rpx;
+  height: 200rpx;
+}
+.child {  
+  height: 30px;  
+  position: absolute;
+  left: 0;
+  top: 0px;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+}  
+.specifydays {
+  text-align:right;
+  margin-right: 40rpx;
+}

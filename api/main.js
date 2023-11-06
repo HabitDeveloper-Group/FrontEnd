@@ -130,3 +130,13 @@ export function deleteHabitsRequest(data) {
     loading: false,
   })
 }
+
+
+//获取分析数据
+export function analysisHabitsRequest(data) {
+  return createRequest ({
+    url: '/analysis' + '?' + data,
+    method: 'GET',
+    loading: false,
+  })
+}
