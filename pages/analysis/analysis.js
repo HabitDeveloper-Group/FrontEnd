@@ -21,6 +21,10 @@ Page({
     this.getList()
   },
 
+  onShow() {
+    this.getList()
+  },
+
 
   getList() {
     const that = this
@@ -32,8 +36,8 @@ Page({
     
     var thisweek = this.getDay(weekNum) 
     console.log(thisweek)
-    var getData = thisweek.start_day + '&' + thisweek.end_day
-
+    var getData = 'begin=' + thisweek.start_day + '&' + 'end=' + thisweek.end_day
+    console.log(getData)
     analysisHabitsRequest(getData).then(res => {
       console.log(res)
       that.setData({
@@ -42,17 +46,25 @@ Page({
     })
   },
 
-  getDay(week) {
-    var thisweek = {};
-    var date = new Date();
-    // 本周一的日期
-    date.setDate(date.getDate() - date.getDay() + 1);
-    thisweek.start_day = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() ;
-  
-    // 本周日的日期
-    date.setDate(date.getDate() + 6);
-    thisweek.end_day = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
-    return thisweek
+
+
+  getDay(weekNumber, year = new Date().getFullYear()) {
+    const date = new Date(year, 0, 1 + (weekNumber - 1) * 7);
+    const weekStart = new Date(date);
+    weekStart.setDate(date.getDate() - date.getDay() + (date.getDay() === 0 ? -6 : 1));
+    const weekEnd = new Date(weekStart);
+    weekEnd.setDate(weekStart.getDate() + 6);
+
+    const formatDate = (date) => {
+        const year = date.getFullYear();
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const day = date.getDate().toString().padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    };
+    var res = {};
+    res.start_day = formatDate(weekStart)
+    res.end_day = formatDate(weekEnd)
+    return res;
   },
 
   
@@ -85,7 +97,8 @@ Page({
     }
 
     var thisweek = that.getDay(week) 
-    var getData = thisweek.start_day + '&' + thisweek.end_day
+    console.log(week)
+    var getData = 'begin=' + thisweek.start_day + '&' + 'end=' + thisweek.end_day
     analysisHabitsRequest(getData).then(res => {
       console.log(res)
       that.setData({
@@ -113,7 +126,7 @@ Page({
     }
 
     var thisweek = that.getDay(week) 
-    var getData = thisweek.start_day + '&' + thisweek.end_day
+    var getData = 'begin=' + thisweek.start_day + '&' + 'end=' + thisweek.end_day
     analysisHabitsRequest(getData).then(res => {
       console.log(res)
       that.setData({

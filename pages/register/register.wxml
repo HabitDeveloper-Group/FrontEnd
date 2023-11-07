@@ -1,5 +1,5 @@
 <!--pages/register/register.wxml-->
-<navigation-bar title="注册" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<navigation-bar title="注册" color="black" background="#FFF"></navigation-bar>
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
   <view class="header">

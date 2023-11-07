@@ -69,6 +69,7 @@ Page({
   deleteHabits(e) {
     const habitId = e.currentTarget.dataset.habitid
     console.log(habitId + "删除")
+    const that = this
     deleteHabitsRequest(habitId).then(res => {
       that.getList()
     })

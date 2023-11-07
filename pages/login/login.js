@@ -68,7 +68,7 @@ Page({
   },
   registerNewUser(){
     setTimeout(() => {
-      wx.redirectTo({
+      wx.navigateTo({
         url: '/pages/register/register',
       })
     }, 500);

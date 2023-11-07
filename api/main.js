@@ -134,6 +134,7 @@ export function deleteHabitsRequest(data) {
 
 //获取分析数据
 export function analysisHabitsRequest(data) {
+  console.log(data)
   return createRequest ({
     url: '/analysis' + '?' + data,
     method: 'GET',

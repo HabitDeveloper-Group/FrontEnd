@@ -50,7 +50,7 @@
   "rendererOptions": {
     "skyline": {
       "defaultDisplayBlock": true,
-      "disableABTest": true,
+      "disableABTest": false,
       "sdkVersionBegin": "3.0.0",
       "sdkVersionEnd": "15.255.255"
     }

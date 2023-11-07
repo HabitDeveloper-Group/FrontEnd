@@ -179,7 +179,7 @@ Page({
           icon:that.data.currentIconUrl,
           tag:that.data.currentTag,
           description:that.data.description,
-          earlistTime:that.data.earliestTime,
+          earliestTime:that.data.earliestTime,
           latestTime:that.data.latestTime,
           lowerLimit:that.data.lowerLimit
     }
