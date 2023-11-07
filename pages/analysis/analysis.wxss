@@ -108,7 +108,6 @@ page {
 
 .itemShow {
   display: flex;
-  flex-direction: row;
   margin-right: 30rpx;
 }
 
@@ -133,3 +132,33 @@ page {
   border-radius: 10rpx;
   background: rgb(233, 154, 233);
 }
+
+.dataShow {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 50rpx;
+}
+.dataItemRow1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.specifydata{
+  font-size: 50rpx;
+  font-family: "阿里妈妈东方大楷 Regular";
+}
+.dataunit{
+  margin-left: 20rpx;
+  color: rgb(163, 152, 152)
+}
+
+.datadescripe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rpx;
+  color: rgb(163, 152, 152)
+}
+

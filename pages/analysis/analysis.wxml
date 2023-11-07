@@ -31,13 +31,46 @@
     </view>
     <view class="content">
       <view class="List" wx:for="{{list.rows}}" wx:key="habitId">
+
         <view class="itemName">
           <image src="{{item.habit.icon}}" mode="aspectFit"></image>
           <view>{{item.habit.habitName}}</view>
         </view>
+
         <view class="itemShow" >
           <view wx:for="{{item.records}}"  wx:for-item="hh" class="grid {{hh == 1 ? 'active' : ''}}">            
           </view>
+        </view>
+
+      </view>
+      <view class="dataShow">
+        <view class="dataItem">
+          <view class="dataItemRow1">
+            <view class="specifydata" style="color: rgb(250, 28, 28);">{{list.finishingRate}}</view>
+            <view class="dataunit">%</view>
+          </view>
+          <view class="datadescripe">打卡率</view>
+        </view>
+        <view class="dataItem">
+          <view class="dataItemRow1">
+            <view class="specifydata" style="color: rgb(38, 198, 247);">{{list.perfectDays}}</view>
+            <view class="dataunit">天</view>
+          </view>
+          <view class="datadescripe">完美打卡</view>
+        </view>
+        <view class="dataItem">
+          <view class="dataItemRow1">
+            <view class="specifydata" style="color: rgb(38, 185, 45);">{{list.averagePerDay}}</view>
+            <view class="dataunit">个</view>
+          </view>
+          <view class="datadescripe">每天完成</view>
+        </view>
+        <view class="dataItem">
+          <view class="dataItemRow1">
+            <view class="specifydata" style="color: rgb(231, 197, 4);">{{list.maxConsecutiveDays}}</view>
+            <view class="dataunit">天</view>
+          </view>
+          <view class="datadescripe">最高连续</view>
         </view>
       </view>
     </view>
