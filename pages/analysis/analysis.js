@@ -69,5 +69,60 @@ Page({
     return num + 1;
 },
 
+  clickLeft() {
+    const that = this
+    var week = that.data.currentWeek
+    var weekshow = that.data.currentWeekShow
+    if (week > 0) {
+      week = week - 1
+    }
+    console.log(week)
+    const todayweek = that.getWeek(new Date())
+    if (week == todayweek - 1) {
+      weekshow = "上周"
+    }else {
+      weekshow = "第" + week + "周"
+    }
+
+    var thisweek = that.getDay(week) 
+    var getData = thisweek.start_day + '&' + thisweek.end_day
+    analysisHabitsRequest(getData).then(res => {
+      console.log(res)
+      that.setData({
+        list: res.data,
+        currentWeek:week,
+        currentWeekShow:weekshow
+      })
+    })
+
+  },
+
+  clickRight() {
+    const that = this
+    var week = that.data.currentWeek
+    var weekshow = that.data.currentWeekShow
+    const todayweek = that.getWeek(new Date())
+    if (week >= todayweek) return
+    week = week + 1
+    if (week == todayweek - 1) {
+      weekshow = "上周"
+    }else if(week == todayweek){
+      weekshow = "本周"
+    }else {
+      weekshow = "第" + week + "周"
+    }
+
+    var thisweek = that.getDay(week) 
+    var getData = thisweek.start_day + '&' + thisweek.end_day
+    analysisHabitsRequest(getData).then(res => {
+      console.log(res)
+      that.setData({
+        list: res.data,
+        currentWeek:week,
+        currentWeekShow:weekshow
+      })
+    })
+
+  }
   
 })

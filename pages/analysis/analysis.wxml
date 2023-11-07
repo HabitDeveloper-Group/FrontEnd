@@ -10,18 +10,23 @@
       </view>
       
       <view class="showWeek">
-        <image src="/asset/image/实心箭头向左.png"></image>
-
-        
+        <view class="leftRow" bindtap="clickLeft">
+          <image src="/asset/image/实心箭头向左.png"></image>
+        </view>
         <view class="week">
+          
           <image src="/asset/image/k.png" mode="aspectFit">{{week}}</image>      
           <view class="child">{{currentWeekShow}}</view>
         </view>
-        <image src="/asset/image/实心箭头向右.png"></image>
+
+        <view class="rightRow" bindtap="clickRight">
+          <image src="/asset/image/实心箭头向右.png"></image>
+        </view>
+
       </view>
 
       <view class="specifydays">
-        <text space="nbsp">一    二    三    四    五    六    七</text>      
+        <text space="nbsp">一    二    三    四    五    六    日</text>      
       </view>
     </view>
     <view class="content">
@@ -31,8 +36,7 @@
           <view>{{item.habit.habitName}}</view>
         </view>
         <view class="itemShow" >
-          <view class="grid" wx:for="{{item.records}}"  wx:for-item="hh">
-            {{hh}}
+          <view wx:for="{{item.records}}"  wx:for-item="hh" class="grid {{hh == 1 ? 'active' : ''}}">            
           </view>
         </view>
       </view>
